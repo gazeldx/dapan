@@ -1,0 +1,45 @@
+<%= form_for(@index) do |f| %>
+  <% if @index.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@index.errors.count, "error") %> prohibited this index from being saved:</h2>
+
+      <ul>
+      <% @index.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :current_date %><br>
+    <%= f.date_select :current_date %>
+  </div>
+  <div class="field">
+    <%= f.label :upshot %><br>
+    <%= f.number_field :upshot %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_price %><br>
+    <%= f.text_field :closing_price %>
+  </div>
+  <div class="field">
+    <%= f.label :opening_price %><br>
+    <%= f.text_field :opening_price %>
+  </div>
+  <div class="field">
+    <%= f.label :advance %><br>
+    <%= f.number_field :advance %>
+  </div>
+  <div class="field">
+    <%= f.label :decline %><br>
+    <%= f.number_field :decline %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
