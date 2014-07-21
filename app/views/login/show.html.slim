@@ -1,0 +1,10 @@
+h1
+  | 用户登录
+= form_tag '/login/login' do
+  = error_info
+  = t'mobile'
+  | :
+  = text_field_tag :mobile
+  input type='submit' value='登  录' class='bn-submit'
+br
+= link_to t(:return_home), root_path

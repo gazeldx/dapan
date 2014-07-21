@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IndicesControllerTest < ActionController::TestCase
+class IndexControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

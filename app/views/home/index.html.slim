@@ -1,24 +1,23 @@
-= title '多空网 － 专注竞猜大盘'
+= title '多空网 － 专注大盘竞猜'
+- if logged?
+  = link_to t('logout'), logout_path
+- else
+  = link_to t('login'), login_path
+  | &nbsp;
+  = notice_info
 h1
-  | 多空网 － 专注竞猜大盘
-
+  | 多空网 － 专注大盘竞猜
+- if logged?
+  | 你好，#{session[:nickname]}。
 | 请提交观点：
 br
-= link_to "看多", new_user_path, target: '_blank'
-| &nbsp;&nbsp;
-= link_to "看空", "＃", target: '_blank'
-| &nbsp;&nbsp;
-= link_to "看平", "＃", target: '_blank'
+= vote_or_reg
 br
 br
 = link_to "查看结果", "＃", target: '_blank'
 br
 h2
   | 竞猜奖品
-br
-| * 2连中可获
-br
-| * 3连中可获
 br
 | * 5连中可加获小米移动电源一只（可冲任意手机）
 br
@@ -39,5 +38,7 @@ br
 br
 | 4连中
 = link_to '李四', '#'
+
+
 
 

@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Current date</th>
       <th>Upshot</th>
       <th>Closing price</th>
@@ -17,7 +16,6 @@
   <tbody>
     <% @indices.each do |index| %>
       <tr>
-        <td><%= index.name %></td>
         <td><%= index.current_date %></td>
         <td><%= index.upshot %></td>
         <td><%= index.closing_price %></td>

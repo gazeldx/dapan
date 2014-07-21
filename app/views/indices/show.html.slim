@@ -1,0 +1,28 @@
+p
+  strong
+    | Current date:
+  = @index.current_date
+p
+  strong
+    | Closing price:
+  = @index.closing_price
+p
+  strong
+    | Opening price:
+  = @index.opening_price
+p
+  strong
+    | Advance:
+  = @index.advance
+p
+  strong
+    | Decline:
+  = @index.decline
+p
+  strong
+    | Upshot:
+  = @index.upshot
+  
+= link_to 'Edit', edit_index_path(@index)
+|  | 
+= link_to 'Back', indices_path

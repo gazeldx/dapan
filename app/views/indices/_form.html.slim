@@ -1,0 +1,24 @@
+= form_for(@index) do |f|
+  = error_msg @index
+  .field
+    = f.label :current_date
+    br
+    = f.date_select :current_date
+  .field
+    = f.label :closing_price
+    br
+    = f.text_field :closing_price
+  .field
+    = f.label :opening_price
+    br
+    = f.text_field :opening_price
+  .field
+    = f.label :advance
+    br
+    = f.number_field :advance
+  .field
+    = f.label :decline
+    br
+    = f.number_field :decline
+  .actions
+    = f.submit
