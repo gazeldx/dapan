@@ -4,17 +4,22 @@
 zh:
   submit: '提交'
   back: '返回'
-  succ: "%{w}成功！"
+  success: "%{w}成功！"
   return_home: '返回首页'
   
+  username: '用户名'
   mobile: '手机号'
   nickname: '昵称'
   login: '登录'
   logout: '退出'
-
+  registered_user_login: '已注册用户登录'
+  default_nickname: '股友'
   user:
     not_exist: '该用户不存在！'
     created_succ: '您已注册成功！'
+  vote:
+    success: '投票成功！'
+    done_before: '您今天已经投过票了！'
     
   errors:
     #TODO How to change %{attribute} to Chinese name?
@@ -65,6 +70,7 @@ zh:
     attributes:
       user:
         mobile: '手机号'
+        username: '用户名'
 
   date:
     formats:

@@ -11,7 +11,7 @@ class Index < ActiveRecord::Base
     puts "calc_upshot now........"
     puts self.inspect
     self.upshot = 1
-    yesterday_closing_price = Index.find_by_current_date(self.current_date - 1). This may be nil closing_price
+    yesterday_closing_price = Index.find_by_current_date(self.current_date - 1)
     amplitude = (closing_price - yesterday_closing_price) / yesterday_closing_price
     if amplitude > FLAT_MAX
       self.upshot = ADVANCE

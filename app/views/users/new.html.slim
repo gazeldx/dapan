@@ -1,6 +1,7 @@
-h1
-  | 用户注册
-| 只有注册后才可以提交观点。
+h2
+  | 注册后才可发表观点！
+h2
+  | 只需填用户名，无密码登录。
 = form_for(@user) do |f|
   - if @user.errors.any?
     #error_explanation
@@ -12,14 +13,16 @@ h1
             = message
   .field
     | *
-    = t'mobile'
+    = t'username'
     br
-    = f.text_field :mobile
+    = f.text_field :username
   .field
     = t'nickname'
     br
     = f.text_field :nickname
   .actions
     = f.submit t(:submit)
-
+br
 = link_to t(:return_home), root_path
+br
+= link_to t(:registered_user_login), login_path

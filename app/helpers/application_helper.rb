@@ -31,4 +31,11 @@ module ApplicationHelper
     end
   end
 
+  def trade_time?
+    #TODO Holiday should be rejected.
+    now = Time.now
+    trade_time_start = Time.new(now.year, now.month, now.day, 9, 15, 0, "+08:00")
+    trade_time_stop = Time.new(now.year, now.month, now.day, 15, 0, 0, "+08:00")
+    !(Date.today.sunday? || Date.today.saturday?) and now.between?(trade_time_start,trade_time_stop)
+  end
 end

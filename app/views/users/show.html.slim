@@ -2,14 +2,14 @@ p#notice
   = notice
 p
   strong
-    = t'mobile'
-  = @user.mobile
+    = t'username'
+  = @user.username
 p
   strong
     = t'nickname'
   = @user.nickname
 br
-| 以后只要输入手机号即可登录本站！
+| 以后只要输入用户名即可登录本站！
 /= link_to 'Edit', edit_user_path(@user)
 br
 br

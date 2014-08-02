@@ -25,7 +25,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: t('user.created_succ')
+      proc_session
+      redirect_to root_path, notice: t('user.created_succ')
+      # redirect_to @user, notice: t('user.created_succ')
     else
       render :new
     end
@@ -63,6 +65,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:mobile, :nickname)
+      params.require(:user).permit(:username, :mobile, :nickname)
     end
 end

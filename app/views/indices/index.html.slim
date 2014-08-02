@@ -1,0 +1,26 @@
+h1 
+  | Listing indices
+table
+  thead
+    tr
+      th Current date
+      th Upshot
+      th Closing price
+      th Opening price
+      th Advance
+      th Decline1
+      th colspan='3'
+  tbody
+    - @indices.each do |index|
+      tr
+        td= index.current_date
+        td= index.upshot
+        td= index.closing_price
+        td= index.opening_price
+        td= index.advance
+        td= index.decline
+        td= link_to 'Show', index
+        td= link_to 'Edit', edit_index_path(index)
+        td= link_to 'Destroy', index, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Index', new_index_path
