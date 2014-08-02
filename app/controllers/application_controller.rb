@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
   def voted_today?
     @vote = Vote.find_by_user_id_and_target_date(session[:id], Date.today)
   end
+  
 end

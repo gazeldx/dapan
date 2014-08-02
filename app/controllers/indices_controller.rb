@@ -2,7 +2,7 @@ class IndicesController < ApplicationController
   before_action :set_index, only: [:show, :edit, :update, :destroy]
 
   def index
-    @indices = Index.all
+    @indices = Index.order('id DESC')
   end
 
   def show
@@ -17,7 +17,6 @@ class IndicesController < ApplicationController
 
   def create
     @index = Index.new(index_params)
-    # @index.upshot = 4#TODO implement it 
     if @index.save
       redirect_to @index, notice: t('index.created_succ')
     else
@@ -25,8 +24,6 @@ class IndicesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /indexs/1
-  # PATCH/PUT /indexs/1.json
   def update
     respond_to do |format|
       if @index.update(index_params)
@@ -44,7 +41,7 @@ class IndicesController < ApplicationController
   def destroy
     @index.destroy
     respond_to do |format|
-      format.html { redirect_to indexs_url, notice: 'Index was successfully destroyed.' }
+      format.html { redirect_to indices_url, notice: 'Index was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

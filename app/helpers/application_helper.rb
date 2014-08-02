@@ -31,8 +31,8 @@ module ApplicationHelper
     end
   end
 
-  def trade_time?
-    #TODO Holiday should be rejected.
+  def trading_time?
+    #TODO Holiday should be rejected. And this should be moved to /lib/Trading.rb
     now = Time.now
     trade_time_start = Time.new(now.year, now.month, now.day, 9, 15, 0, "+08:00")
     trade_time_stop = Time.new(now.year, now.month, now.day, 15, 0, 0, "+08:00")
