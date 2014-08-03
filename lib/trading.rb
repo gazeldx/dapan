@@ -22,4 +22,7 @@ module Trading
     end
   end
   
+  def day_name_in_week(date)
+    ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][date.wday]
+  end
 end
