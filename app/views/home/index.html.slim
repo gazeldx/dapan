@@ -3,8 +3,9 @@
   = link_to t('logout'), logout_path
 - else
   = link_to t('login'), login_path
-  | &nbsp;
-  = notice_info
+  | &nbsp;#{link_to '注册', new_user_path}
+| &nbsp;
+= notice_info
 h1
   | 多空网 － 专注大盘竞猜
 - if logged?
@@ -13,7 +14,7 @@ br
 = vote_box
 br
 br
-| 共#{@advance_count + @decline_count + @flat_count}名股友参与投票，
+| 共#{@advance_count + @decline_count + @flat_count}名股友参与#{date_and_week_name(get_target_date)}大盘的投票，
 br
 | 看涨 #{@advance_count} 人
 br

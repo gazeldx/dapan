@@ -1,4 +1,7 @@
 class IndicesController < ApplicationController
+  
+  before_filter :admin
+  
   before_action :set_index, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :holidays
+
   resources :users
   resources :indices
   
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   get 'logout' => 'login#logout'
   
   get 'vote_:upshot' => 'votes#do_vote'
-  get 'votes' => 'votes#today'
+  # get 'votes' => 'votes#today'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
