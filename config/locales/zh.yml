@@ -7,6 +7,10 @@ zh:
   success: "%{w}成功！"
   return_home: '返回首页'
   
+  decline: '看空'
+  advance: '看多'
+  flat: '看平'
+  
   username: '用户名'
   mobile: '手机号'
   nickname: '昵称'

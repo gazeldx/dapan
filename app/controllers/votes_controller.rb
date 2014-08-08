@@ -6,8 +6,8 @@ class VotesController < ApplicationController
   def do_vote
     target_date = get_target_date
     unless voted?(target_date)
-      @vote = Vote.new(user_id: session[:id], target_date: target_date, upshot: params[:upshot])  	
-      redirect_to @vote, notice: t('vote.success') if @vote.save!
+      @vote = Vote.new(user_id: session[:id], target_date: target_date, upshot: params[:upshot])
+      redirect_to root_path, notice: t('vote.success') if @vote.save!
     else
       redirect_to root_path, notice: t('vote.done_before')
     end

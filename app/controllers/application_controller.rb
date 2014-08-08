@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   
+  before_filter :current_user
+  
   helper_method :voted?
   
   # Prevent CSRF attacks by raising an exception.
@@ -13,9 +15,11 @@ class ApplicationController < ActionController::Base
     session[:nick_name] = @user.nick_name
   end
   
+  def current_user
+    @user = User.find(session[:id]) unless session[:id].nil? 
+  end
+  
   def admin?
-    puts "------s"
-    puts session[:username]
     session[:username] == 'admin4'
   end
   

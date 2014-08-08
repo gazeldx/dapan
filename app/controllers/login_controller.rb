@@ -5,7 +5,6 @@ class LoginController < ApplicationController
 
   def login
     @user = User.find_by_username(params[:username])
-    puts @user.inspect
     if @user.nil?
       flash[:error] = t'user.not_exist'
       render :show

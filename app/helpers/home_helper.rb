@@ -4,14 +4,12 @@ module HomeHelper
   
   def vote_box
     target_date = get_target_date
-    puts "target------"
-    puts target_date
     tip = "对#{date_and_week_name(target_date)}的大盘，你的观点是：<br>"
     if logged?
       # next_target_date = next_trading_day(target_date)
       if voted?(target_date)
         #raw "你今天已经投过票了。等收盘后再来预测#{next_target_date}(#{day_name_in_week(next_target_date)})走势吧。"
-        raw "你今天已经投过票了。等收盘后再来预测下一日走势吧。"
+        raw "你今天投的是#{@user.current_vote.decision}。等收盘后再来预测下一日走势吧。"
       elsif trading_time?
         raw "这是交易时间，请等收盘后再来预测！"
       else
