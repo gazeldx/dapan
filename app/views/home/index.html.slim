@@ -1,50 +1,45 @@
 = title '多空网 － 专注大盘竞猜'
-- if logged?
-  = link_to t('logout'), logout_path
-- else
-  = link_to t('login'), login_path
-  | &nbsp;#{link_to '注册', new_user_path}
-| &nbsp;
+.jumbotron
+  h1
+    | 竞猜大盘！
+  p.lead
+    = vote_box
+  h2
+    - all_count = @advance_count + @decline_count + @flat_count
+    | 共#{all_count}人竞猜#{date_and_week_name(get_target_date)}大盘，
+  p.lead
+    .progress
+      - advance = (@advance_count.to_f/all_count*100)
+      div class='progress-bar progress-bar-danger' style="width: #{advance}%"
+        | 看涨#{advance.round}%
+      - decline = (@decline_count.to_f/all_count*100)
+      div class='progress-bar progress-bar-success' style="width: #{decline}%"
+        | 看空#{decline.round}%
+      - flat = (@flat_count.to_f/all_count*100)
+      div class='progress-bar progress-bar-warning' style="width: #{flat}%"
+        | 看平#{flat.round}%
 = notice_info
-h1
-  | 多空网 － 专注大盘竞猜
-- if logged?
-  | 你好，#{session[:nick_name]}。
-br
-= vote_box
-br
-br
-| 共#{@advance_count + @decline_count + @flat_count}名股友参与#{date_and_week_name(get_target_date)}大盘的投票，
-br
-| 看涨 #{@advance_count} 人
-br
-| 看跌 #{@decline_count} 人
-br
-| 看平 #{@flat_count} 人
-br
-br
-h2
-  | 竞猜奖品
-| * 5连中可加获小米移动电源一只（可冲任意手机）
-br
-| * 6连中可加获金士顿天猫旗舰店正版32G USB3.0 U盘一只，价值200元
-br
-| * 8连中可加获东方财富通level2收费版1年使用权（含核心内参），价值1253元
-br
-| * 10连中可加获红米手机一部
-br
-| * 12连中加获小米3手机一部
-br
-| 说明：注册用户在2014年9月31日前开始了第一天的竞猜即为有效，
-br
-| 高手榜
-br
-| 5连中
-= link_to '张三', '#'
-br
-| 4连中
-= link_to '李四', '#'
 
-
-
-
+div class='row marketing'
+  .col-lg-6
+    h4
+      | 竞猜奖品
+    p 
+	  | 5连中获小米移动电源一只（可冲任意手机）
+	p 
+	  | 6连中获金士顿正版32G U盘一只，值200元
+	p	
+	  | 8连中获东方财富通level2收费版1年，值1253元
+	p 
+	  | 10连中获红米手机一部
+	p
+	  | 12连中获小米3手机一部 
+	p 
+	  | 说明：注册用户在2014年9月31日前开始了第一天的竞猜即为有效，
+  .col-lg-6
+    h4
+      | 高手榜
+    p 
+      = link_to '张三', '#'
+	p
+	  = link_to '李四', '#'

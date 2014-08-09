@@ -57,6 +57,11 @@ module Trading
       target_date = next_trading_day(today)
     end
   end
+
+  def trading_day_before_open?
+    now = Time.now
+    trading_day?(now) and now < trade_time_start(now)
+  end
   
   def trade_time_start(now)
     Time.new(now.year, now.month, now.day, 9, 25, 0, "+08:00")

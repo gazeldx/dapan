@@ -11,6 +11,9 @@ zh:
   advance: '看多'
   flat: '看平'
   
+  site:
+    name: '多空网'
+  
   username: '用户名'
   mobile: '手机号'
   nickname: '昵称'
