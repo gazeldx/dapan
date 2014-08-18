@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140719101421) do
     t.integer "user_id"
     t.date    "target_date"
     t.integer "upshot"
+    t.boolean "correct"
   end
 
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree

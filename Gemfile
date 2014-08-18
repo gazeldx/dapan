@@ -34,6 +34,7 @@ gem 'unicorn', '~> 4.8.3'
 gem 'pg', '~> 0.17.1'
 gem 'haml', '~> 4.0.5'
 gem 'slim', '~> 2.0.3'
+gem 'whenever', :require => false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

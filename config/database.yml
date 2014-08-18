@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: duokong_production
-  username: duokong
-  password: <%= ENV['duokong_DATABASE_PASSWORD'] %>
+  # username: duokong
+  # password: <%= ENV['duokong_DATABASE_PASSWORD'] %>

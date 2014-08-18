@@ -1,4 +1,5 @@
 = title '多空网 － 专注大盘竞猜'
+= notice_info
 .jumbotron
   h1
     | 竞猜大盘！
@@ -9,16 +10,17 @@
     | 共#{all_count}人竞猜#{date_and_week_name(get_target_date)}大盘，
   p.lead
     .progress
-      - advance = (@advance_count.to_f/all_count*100)
-      div class='progress-bar progress-bar-danger' style="width: #{advance}%"
-        | 看涨#{advance.round}%
-      - decline = (@decline_count.to_f/all_count*100)
-      div class='progress-bar progress-bar-success' style="width: #{decline}%"
-        | 看空#{decline.round}%
-      - flat = (@flat_count.to_f/all_count*100)
-      div class='progress-bar progress-bar-warning' style="width: #{flat}%"
-        | 看平#{flat.round}%
-= notice_info
+      - if all_count > 0
+        - advance = (@advance_count.to_f/all_count*100)
+        - puts ""
+        div class='progress-bar progress-bar-danger' style="width: #{advance}%"
+          | 看涨#{advance.round}%
+        - decline = (@decline_count.to_f/all_count*100)
+        div class='progress-bar progress-bar-success' style="width: #{decline}%"
+          | 看空#{decline.round}%
+        - flat = (@flat_count.to_f/all_count*100)
+        div class='progress-bar progress-bar-warning' style="width: #{flat}%"
+          | 看平#{flat.round}%
 
 div class='row marketing'
   .col-lg-6

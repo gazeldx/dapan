@@ -1,28 +1,14 @@
-h2
-  | 注册后才可发表观点！
-h2
-  | 只需填用户名，无密码登录。
-= form_for(@user) do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2
-        = "#{pluralize(@user.errors.count, 'error')}  prohibited this user from being saved:"
-      ul
-        - @user.errors.full_messages.each do |message|
-          li
-            = message
-  .field
-    | *
-    = t'username'
-    br
-    = f.text_field :username
-  .field
-    = t'nickname'
-    br
-    = f.text_field :nickname
-  .actions
-    = f.submit t(:submit)
+= form_for @user, html: {class: 'form-signin', role: 'form'} do |f|
+  h2
+    | 用户注册
+  = error_msg @user
+  input type='text' name='user[username]' value=@user.username class='form-control' placeholder="#{t'username'}" required='' autofocus=''
+  input type='text' name='user[nickname]' value=@user.nickname class='form-control' placeholder="#{t'nickname'}"
+  .checkbox
+    span title='即登录时只需填写用户名，不用填写密码。' 本站实施无密码登录。
+  button class='btn btn-lg btn-primary btn-block' type='submit'
+    = t(:submit)
+  br
+  = link_to t(:registered_user_login), login_path
 br
-= link_to t(:return_home), root_path
 br
-= link_to t(:registered_user_login), login_path

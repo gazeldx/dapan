@@ -4,6 +4,7 @@ class CreateVote < ActiveRecord::Migration
       t.references :user, index: true
       t.date :target_date
       t.integer :upshot
+      t.boolean :correct
     end
   end
 end

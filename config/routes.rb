@@ -13,8 +13,13 @@ Rails.application.routes.draw do
   get 'login' => 'login#show'
   post 'login/login' => 'login#login'
   get 'logout' => 'login#logout'
+  get 'register' => 'users#new'
   
   get 'vote_:upshot' => 'votes#do_vote'
+
+  get 'admin' => 'admin/home#index'
+  get 'update_user_vote'  => 'admin/votes#update_user_vote'
+
   # get 'votes' => 'votes#today'
 
   # Example of regular route:

@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   
   has_many :votes
   
-  validates_length_of :username, within: 6..20
+  validates_length_of :username, within: 6..22
   validates_uniqueness_of :username
+  validates_uniqueness_of :nickname, allow_blank: true, allow_nil: true
+  validates_length_of :nickname, in: 2..12, allow_blank: true
   validates_length_of :mobile, is: 11, allow_blank: true
   validates_uniqueness_of :mobile, allow_blank: true, allow_nil: true
   

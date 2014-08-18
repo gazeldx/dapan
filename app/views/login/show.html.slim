@@ -1,10 +1,9 @@
-h1
-  | 用户登录
-= form_tag '/login/login' do
+= form_tag '/login/login', class: 'form-signin', role: 'form' do
+  h2.form-signin-heading 用户登录
   = error_info
-  = t'username'
-  | :
-  = text_field_tag :username
-  input type='submit' value='登  录' class='bn-submit'
+  input type='text' name='username' class='form-control' placeholder='只需填用户名，无密码登录' required='' autofocus=''
+  br
+  button class='btn btn-lg btn-primary btn-block' type='submit'
+    | 登  录
 br
-= link_to t(:return_home), root_path
+br

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :current_user
   
-  helper_method :voted?
+  helper_method :voted?, :logged?
   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
   
   def voted?(date)
     @vote = Vote.find_by_user_id_and_target_date(session[:id], date)
+  end
+
+  def logged?
+    session[:id]
   end
   
 end

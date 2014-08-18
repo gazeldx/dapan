@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :admin, only: [:index, :destroy, :show]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -14,7 +15,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if logged?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   # GET /users/1/edit
@@ -26,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       proc_session
-      redirect_to root_path, notice: t('user.created_succ')
+      redirect_to root_path, notice: "您好，#{@user.nick_name}。#{t('user.created_succ')}"
       # redirect_to @user, notice: t('user.created_succ')
     else
       render :new

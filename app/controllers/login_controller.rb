@@ -10,12 +10,13 @@ class LoginController < ApplicationController
       render :show
     else
       proc_session
+      flash[:notice] = t('success', w: t('login'))
       redirect_to root_path
     end
   end
 
   def logout
-    session[:id], session[:mobile], session[:nick_name] = nil, nil, nil
+    session[:id], session[:username], session[:nick_name] = nil, nil, nil
     flash[:notice] = t('success', w: t('logout'))
     redirect_to root_path
   end

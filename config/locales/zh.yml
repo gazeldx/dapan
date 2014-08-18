@@ -6,14 +6,18 @@ zh:
   back: '返回'
   success: "%{w}成功！"
   return_home: '返回首页'
-  
+
   decline: '看空'
   advance: '看多'
   flat: '看平'
   
+  
+  
+
+
   site:
     name: '多空网'
-  
+
   username: '用户名'
   mobile: '手机号'
   nickname: '昵称'
@@ -27,7 +31,7 @@ zh:
   vote:
     success: '投票成功！'
     done_before: '您今天已经投过票了！'
-    
+
   errors:
     #TODO How to change %{attribute} to Chinese name?
     format: "%{attribute} %{message}"
@@ -59,7 +63,7 @@ zh:
       size_too_big: "文件太大了。最大允许上传 %{file_size} 哦。"
 
       extension_white_list_error: "格式不对"
-      
+
     template: &errors_template
       header:
         one: "有 1 个错误发生导致「%{model}」无法被保存。"
@@ -78,6 +82,7 @@ zh:
       user:
         mobile: '手机号'
         username: '用户名'
+        nickname: '昵称'
 
   date:
     formats:
