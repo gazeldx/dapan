@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @advance_count = votes.where(upshot: ADVANCE).count
     @decline_count = votes.where(upshot: DECLINE).count
     @flat_count = votes.where(upshot: FLAT).count
+    Rails.logger.warn "iiiiiiiiiidex"
     return @advance_count, @decline_count, @flat_count
   end
   
