@@ -27,7 +27,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right" role="tablist">
           <li role="presentation" class="<%= controller_path == 'home' ? 'active' : nil %>"><a href="<%= root_path %>">首页</a></li>
-          <li role="presentation" class="<%= controller_path == 'best' ? 'active' : nil %>"><a href="#">高手们</a></li>
+          <!-- <li role="presentation" class="<%= controller_path == 'best' ? 'active' : nil %>"><a href="#">高手们</a></li> -->
 					<% if logged?%>
 						<li role="presentation"><%= link_to t('logout'), logout_path %></li>				
           <% else %>

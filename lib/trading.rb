@@ -62,6 +62,10 @@ module Trading
       next_trading_day(today)
     end
   end
+  
+  def get_target_date_all_ok
+    get_target_date.nil? ? Date.today: get_target_date
+  end
 
   def trading_day_before_open?
     now = Time.now

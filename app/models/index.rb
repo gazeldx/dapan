@@ -39,11 +39,12 @@ class Index < ActiveRecord::Base
     end
     
     votes.each do |vote|
-      result = vote.upshot == index.upshot
+      result = (vote.upshot == index.upshot)
       vote.update_attribute(:correct, result)
       
       user = vote.user
-      all_kill = (result ? user.all_kill + 1 : 0)#TODO: The user who not vote today should also be updated to 0!
+      all_kill = (result ? user.all_kill.to_i + 1 : 0)
+      puts "all_kill for user_id = #{user.id} is #{all_kill} "
       user.update_attribute(:all_kill, all_kill)
     end if index.upshot.present?
   end

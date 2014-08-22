@@ -7,7 +7,7 @@
     = vote_box
   h2
     - all_count = @advance_count + @decline_count + @flat_count
-    | 共#{all_count}人竞猜#{date_and_week_name(get_target_date)}大盘，
+    | 共#{all_count}人竞猜#{date_and_week_name(get_target_date_all_ok)}大盘，
   p.lead
     .progress
       - if all_count > 0
@@ -27,21 +27,21 @@ div class='row marketing'
     h4
       | 竞猜奖品
     p 
-	  | 4连中获小米移动电源一只（可冲任意手机，共20/剩20）
-	p 
-	  | 6连中获金士顿正版32G U盘一只（值200元，共10/剩10）
-	p	
-	  | 8连中获东方财富通level2收费版1年（值1253元，共5/剩5）
-	p 
-	  | 10连中获红米手机一部（共3/剩3）
-	p
-	  | 12连中获小米3手机一部 （共2/剩2）
-	p 
-	  | 说明：注册用户在2014年9月31日前开始了第一天的竞猜即为有效，
+	    | 4连中获小米移动电源（手机充电，共20/剩20）
+  	p 
+  	  | 6连中获金士顿32G U盘（值200元，共10/剩10）
+  	p	
+  	  | 8连中获东方财富通level2收费版1年（共5/剩5）
+  	p 
+  	  | 10连中获红米手机一部（共3/剩3）
+  	p
+  	  | 12连中获小米3手机一部（共2/剩2）
+  	p 
+  	  | 说明：注册用户在2014年9月31日前开始了第一天的竞猜即为有效，
   .col-lg-6
     h4
       | 高手榜
-    p 
-      = link_to '张三', '#'
-	p
-	  = link_to '李四', '#'
+    - @aces.each do |ace|
+      p 
+        = link_to ace.nick_name, ace
+        | &nbsp;&nbsp;#{ace.all_kill.to_i}连中
