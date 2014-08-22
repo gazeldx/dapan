@@ -7,7 +7,7 @@ Rails.application.initialize!
 DECLINE = 1
 ADVANCE = 2
 FLAT = 3
-FLAT_MAX = 0.35
+FLAT_MAX = 0.0035
 
 ADF = [I18n.t('decline'), I18n.t('advance'), I18n.t('flat')]
 DEFAULT_NICKNAME = I18n.t('default_nickname')

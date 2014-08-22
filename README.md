@@ -8,3 +8,5 @@ Login:
 
 Test:
   At trading time , login to system.
+  
+rails generate migration AddVoteCountsToUsers all_kill:integer month_correct:integer

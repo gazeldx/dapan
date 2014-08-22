@@ -51,10 +51,15 @@ module Trading
     today = Date.today
     if trading_day?(today)
       now = Time.now
-      target_date = today if now < trade_time_start(now)
-      target_date = next_trading_day(today) if now > trade_time_stop(now)
+      if now < trade_time_start(now)
+        today
+      elsif now > trade_time_stop(now)
+        next_trading_day(today)
+      else
+        nil
+      end
     else
-      target_date = next_trading_day(today)
+      next_trading_day(today)
     end
   end
 
