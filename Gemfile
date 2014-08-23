@@ -35,6 +35,9 @@ gem 'pg', '~> 0.17.1'
 gem 'haml', '~> 4.0.5'
 gem 'slim', '~> 2.0.3'
 gem 'whenever', :require => false
+
+gem 'execjs'
+gem 'therubyracer'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
