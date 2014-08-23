@@ -7,6 +7,10 @@ class Vote < ActiveRecord::Base
   validates_inclusion_of :upshot, in: 1..3 
 
   def decision
-    ADF[self.upshot - 1] 
+    ADF[self.upshot] 
+  end
+  
+  def index
+    Index.find_by_current_date(self.target_date)
   end
 end

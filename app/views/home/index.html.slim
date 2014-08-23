@@ -41,7 +41,8 @@ div class='row marketing'
   .col-lg-6
     h4
       | 高手榜
-    - @aces.each do |ace|
+    - @aces.each do |user|
       p 
-        = link_to ace.nick_name, ace
-        | &nbsp;&nbsp;#{ace.all_kill.to_i}连中
+        = link_to user.nick_name, user
+        - decision = user.current_vote.try(:decision)
+        | &nbsp;&nbsp;#{user.all_kill.to_i}连中，#{date_and_week_name(get_target_date_all_ok)}#{decision.nil? ? '未竞猜' : decision}

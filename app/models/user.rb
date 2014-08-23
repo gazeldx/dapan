@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :mobile, allow_blank: true, allow_nil: true
   
   def current_vote
-    self.votes.where(target_date: get_target_date).first
+    self.votes.where(target_date: get_target_date_all_ok).first
   end
   
   def nick_name

@@ -11,9 +11,8 @@ zh:
   advance: '看多'
   flat: '看平'
   
-  
-  
-
+  _advance: '上涨'
+  _decline: '下跌'
 
   site:
     name: '多空网'
