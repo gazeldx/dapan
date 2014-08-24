@@ -24,8 +24,8 @@
 # end
 
 # every 1.minute do
-every :day, :at => '3:03 pm' do
-  set :environment, "development"
+every :day, :at => '3:05 pm' do
+  # set :environment, "development"
   set :output, "log/cron_job.log"
   puts "schedule running now..... ok??? jz 1006"
   runner "Index.auto_generate"
