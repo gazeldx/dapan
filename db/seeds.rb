@@ -10,4 +10,4 @@
 # Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Index.create!(opening_price: 2222, closing_price: 2223, current_date: Date.parse('2014-08-11'))
+# Index.create!(opening_price: 2222, closing_price: 2223, current_date: Date.parse('2014-08-11'))

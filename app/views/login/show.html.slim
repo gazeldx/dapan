@@ -1,6 +1,7 @@
 = form_tag '/login/login', class: 'form-signin', role: 'form' do
   h2.form-signin-heading 用户登录
   = error_info
+  = render partial: 'ie_tip', locals: {tip: t('username')}
   input type='text' name='username' class='form-control' placeholder='只需填用户名，无密码登录' required='' autofocus=''
   br
   button class='btn btn-lg btn-primary btn-block' type='submit'
