@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :admin, only: [:index, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :destroy]
 
   def index
     @users = User.all
@@ -23,7 +23,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def profile
+    @_user = User.find(session[:id])
   end
 
   def create
@@ -37,14 +38,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    @_user = User.find(params[:id])
+    if @_user.update(user_params)
+      redirect_to profile_path, notice: '您的个人资料已修改成功！'
+    else
+      render :profile
     end
   end
 

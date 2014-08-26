@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'logout' => 'login#logout'
   get 'register' => 'users#new'
   
+  get 'profile' => 'users#profile'
+  
   get 'vote_:upshot' => 'votes#do_vote'
 
   get 'admin' => 'admin/home#index'

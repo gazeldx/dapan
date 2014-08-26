@@ -29,4 +29,8 @@ module ApplicationHelper
       content_tag(:div, flash[:error], class: 'alert alert-danger', role: 'alert')
     end
   end
+  
+  def ie_tip(tip)
+    render partial: '/shared/ie_tip', locals: {tip: tip}
+  end
 end

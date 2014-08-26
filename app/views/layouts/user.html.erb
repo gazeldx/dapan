@@ -26,8 +26,9 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="<%= user_path(@user) %>">首页</a>
+          <a class="blog-nav-item active" href="<%= user_path(@user) %>">个人空间</a>
           <a class="blog-nav-item" href="<%= root_path %>"><%= t'site.name'%></a>
+          
           <a class="blog-nav-item pull-right" href="<%= register_path %>">注册</a>
           <a class="blog-nav-item pull-right" href="<%= login_path %>"><%= t('login') %></a>
         </nav>

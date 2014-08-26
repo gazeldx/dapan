@@ -1,0 +1,22 @@
+= title '个人资料'
+= notice_info
+= form_for @_user, html: {class: 'form-signin', role: 'form'} do |f|
+  h2
+    | 修改个人资料
+  = error_msg @_user
+  h4
+    = "#{t'username'}：#{@_user.username}"
+  = ie_tip(t'nickname')
+  input type='text' name='user[nickname]' value=@_user.nickname class='form-control' placeholder="#{t'nickname'}" autofocus=''
+  = ie_tip(t'mobile')
+  input type='text' name='user[mobile]' value=@_user.mobile class='form-control' placeholder="#{t'mobile'}"
+  / hr
+  / = ie_tip("密码")
+  / input type="password" class="form-control" placeholder="Password" required=""
+  / .checkbox
+  /   span title='即登录时只需填写用户名，不用填写密码。' 本站实施无密码登录。
+  br
+  button class='btn btn-lg btn-primary btn-block' type='submit'
+    = t(:submit)
+br
+br
