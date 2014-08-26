@@ -2,9 +2,9 @@
   h2
     | 用户注册
   = error_msg @user
-  = render partial: '/login/ie_tip', locals: {tip: t('username')}
+  = render partial: '/shared/ie_tip', locals: {tip: t('username')}
   input type='text' name='user[username]' value=@user.username class='form-control' placeholder="#{t'username'}" required='' autofocus=''
-  = render partial: '/login/ie_tip', locals: {tip: t('nickname')}
+  = render partial: '/shared/ie_tip', locals: {tip: t('nickname')}
   input type='text' name='user[nickname]' value=@user.nickname class='form-control' placeholder="#{t'nickname'}"
   .checkbox
     span title='即登录时只需填写用户名，不用填写密码。' 本站实施无密码登录。

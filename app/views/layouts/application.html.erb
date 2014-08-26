@@ -29,7 +29,13 @@
           <li role="presentation" class="<%= controller_path == 'home' ? 'active' : nil %>"><a href="<%= root_path %>">首页</a></li>
           <!-- <li role="presentation" class="<%= controller_path == 'best' ? 'active' : nil %>"><a href="#">高手们</a></li> -->
 					<% if logged?%>
-						<li role="presentation"><%= link_to t('logout'), logout_path %></li>				
+						<li role="presentation" class='dropdown'>
+              <%= link_to '设置', "#", {class: 'dropdown-toggle', 'data-toggle'.to_sym => "dropdown", 'aria-expanded'.to_sym => "false"} %>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to '个人资料', logout_path %></li>
+                <li><%= link_to t('logout'), logout_path %></li>
+              </ul>
+            </li>
           <% else %>
 						<li role="presentation" class="<%= controller_path == 'login' ? 'active' : nil %>"><%= link_to t('login'), login_path %></li>
           	<li role="presentation" class="<%= controller_path == 'users' and controller.action_name == 'new' ? 'active' : nil %>"><%= link_to '注册', register_path %></li>
