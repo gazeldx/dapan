@@ -1,4 +1,5 @@
 TODO:
+  Have seesion user should not reg or login.
 Login:
   User can login by password if they what.
 

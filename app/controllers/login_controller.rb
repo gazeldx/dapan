@@ -1,6 +1,7 @@
 class LoginController < ApplicationController
 
-  def show  	
+  def show
+    redirect_to root_path if logged?
   end
 
   def login

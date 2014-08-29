@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
     @votes = @user.votes.order('id DESC')
     @all_count = @user.votes.count
-    @correct_count = @user.votes.where(upshot: true).count
+    @correct_count = @user.votes.where(correct: true).count
     @correct_rate = @all_count == 0 ? 0 : ((@correct_count / @all_count.to_f)*100).round(1)
     @max_all_kill = @user.votes.maximum('all_kill')
     render layout: 'user'
