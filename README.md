@@ -1,9 +1,7 @@
 TODO:
-  Have seesion user should not reg or login.
-Login:
-  User can login by password if they what.
-
-
+User:
+  HomePage not show the awords info fully.
+  
 Asset Pipline not used now.
 
 rails generate migration AddVoteCountsToUsers all_kill:integer month_correct:integer

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include Trading
   
   has_many :votes
+  has_many :blogs
   
   validates_length_of :username, within: 6..22
   validates_uniqueness_of :username
@@ -13,7 +14,7 @@ class User < ActiveRecord::Base
   def current_vote
     self.votes.where(target_date: get_target_date_all_ok).first
   end
-  
+    
   def nick_name
     self.nickname.presence || DEFAULT_NICKNAME
   end

@@ -29,17 +29,17 @@
           <a class="blog-nav-item active" href="<%= user_path(@user) %>">个人空间</a>
           <a class="blog-nav-item" href="<%= root_path %>"><%= t'site.name'%></a>
           <% if logged?%>
-            <!-- <a class="blog-nav-item pull-right dropdown" href="<%= register_path %>">设置</a> -->
             <li role="presentation" class='pull-right dropdown' style='display: block;'>
               <%= link_to '设置', "#", {class: 'blog-nav-item pull-right dropdown-toggle', 'data-toggle'.to_sym => "dropdown", 'aria-expanded'.to_sym => "false"} %>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to '个人资料', profile_path %></li>
+                <li><%= link_to '登录密码', set_p_path %></li>
                 <li><%= link_to t('logout'), logout_path %></li>
               </ul>
             </li>
           <% else %>
             <a class="blog-nav-item pull-right" href="<%= register_path %>">注册</a>
-            <a class="blog-nav-item pull-right" href="<%= login_path %>"><%= t('login') %></a>
+            <a class="blog-nav-item pull-right" href="<%= login_path %>"><%= t('_login') %></a>
           <% end %>
         </nav>
       </div>
@@ -49,7 +49,7 @@
 
       <div class="blog-header">
         <h1 class="blog-title"><%= @user.nick_name%></h1>
-        <p class="lead blog-description">大盘竞猜，当前<%= @user.all_kill %>连中</p>
+        <p class="lead blog-description">大盘竞猜，当前<%= @user.all_kill.to_i %>连中。 <%= unless @user.memo.blank?; "#{@user.nick_name}：#{@user.memo}"; end%></p>
       </div>
 
       <div class="row">
@@ -64,7 +64,7 @@
             <p>共猜了<%= @all_count %>次</p>
             <p>猜中了<%= @correct_count %>次</p>
             <p>准确率<%= @correct_rate %>%</p>
-            <p>最高<%= @max_all_kill %>连中</p>
+            <p>最高<%= @max_all_kill.to_i %>连中</p>
           </div>
         </div><!-- /.blog-sidebar -->
 

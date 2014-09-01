@@ -10,9 +10,20 @@ class LoginController < ApplicationController
       flash[:error] = t'user.not_exist'
       render :show
     else
-      proc_session
-      flash[:notice] = t('success', w: t('login'))
-      redirect_to root_path
+      if @user.passwd.blank?
+        login_process
+      else
+        if params[:passwd].blank?
+          redirect_to login2_path
+        else
+          if @user.passwd == Digest::SHA1.hexdigest(params[:passwd])
+            login_process
+          else
+            flash[:error] = t'login.password_wrong'
+            redirect_to login2_path
+          end
+        end
+      end
     end
   end
 
@@ -21,5 +32,12 @@ class LoginController < ApplicationController
     flash[:notice] = t('success', w: t('logout'))
     redirect_to root_path
   end
+  
+  private
+   def login_process
+     proc_session
+     flash[:notice] = t('success', w: t('_login'))
+     redirect_to root_path
+   end 
 
 end

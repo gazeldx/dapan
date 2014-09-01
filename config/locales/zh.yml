@@ -10,7 +10,7 @@ zh:
   decline: '看空'
   advance: '看多'
   flat: '看平'
-  
+
   _advance: '上涨'
   _decline: '下跌'
 
@@ -20,16 +20,35 @@ zh:
   username: '用户名'
   mobile: '手机号'
   nickname: '昵称'
-  login: '登录'
-  logout: '退出'
-  registered_user_login: '已注册用户登录'
+
   default_nickname: '股友'
   user:
+    memo: '个人空间说明'
     not_exist: '该用户不存在！'
     created_succ: '您已注册成功！'
+
   vote:
     success: '投票成功！'
     done_before: '您今天已经投过票了！'
+
+  _login: '登录'
+  logout: '退出'
+  password_setted: '密码已设置成功！'
+  password_updated: '密码已修改！'
+  old_password_wrong: "当前密码错误！"
+  password_confirm_wrong: "两次输入的密码不一致！"
+  login:
+    password_wrong: "密码错误！"
+    user_exist_password_wrong: "用户是存在的，但密码错误！"
+
+  time_format: "%Y年%-m月%-d日 %H:%M"
+  time_without_year: "%-m月%-d日 %H:%M"
+  date_format: "%Y年%-m月%-d日"
+  date_without_year: "%-m月%-d日"
+  date_format_: "%Y-%m-%-d"
+  no_year: "%-m月%-d日 %H:%M"
+  no_year_simple: "%-m-%-d %H:%M"
+  h_m: "%H:%M"
 
   errors:
     #TODO How to change %{attribute} to Chinese name?

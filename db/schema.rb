@@ -11,34 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823084154) do
+ActiveRecord::Schema.define(version: 20140831131236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "blogs", force: true do |t|
+    t.integer "user_id"
+    t.string  "content"
+    t.date    "target_date"
+  end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
+
   create_table "indices", force: true do |t|
-    t.date    "current_date"
-    t.float   "closing_price"
-    t.float   "opening_price"
-    t.integer "advance"
-    t.integer "decline"
-    t.integer "upshot"
+    t.date     "current_date"
+    t.float    "closing_price"
+    t.float    "opening_price"
+    t.integer  "advance"
+    t.integer  "decline"
+    t.integer  "upshot"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string  "username"
-    t.string  "mobile"
-    t.string  "nickname"
-    t.integer "all_kill"
-    t.integer "month_correct"
+    t.string   "username"
+    t.string   "mobile"
+    t.string   "nickname"
+    t.integer  "all_kill"
+    t.integer  "month_correct"
+    t.string   "memo"
+    t.string   "passwd"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "votes", force: true do |t|
-    t.integer "user_id"
-    t.date    "target_date"
-    t.integer "upshot"
-    t.boolean "correct"
-    t.integer "all_kill"
+    t.integer  "user_id"
+    t.date     "target_date"
+    t.integer  "upshot"
+    t.boolean  "correct"
+    t.integer  "all_kill"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :indices
+  resources :votes
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'login' => 'login#show'
+  get 'login2' => 'login#login_with_password'
   post 'login/login' => 'login#login'
   get 'logout' => 'login#logout'
   get 'register' => 'users#new'
@@ -21,8 +23,11 @@ Rails.application.routes.draw do
 
   get 'admin' => 'admin/home#index'
   get 'update_user_vote'  => 'admin/votes#update_user_vote'
-
-  # get 'votes' => 'votes#today'
+  
+  post 'blogs' => 'blogs#create'
+  get 'set_p' => 'users#set_password'
+  put 'update_password' => 'users#update_password'
+  patch 'update_password' => 'users#update_password'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

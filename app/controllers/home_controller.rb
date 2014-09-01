@@ -12,6 +12,8 @@ class HomeController < ApplicationController
     good_players
     
     @aces = @players.limit(7)
+    
+    @vote = @user.try(:current_vote)
   end
   
   private

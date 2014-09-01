@@ -1,16 +1,13 @@
+= title '用户注册_多空网'
 = form_for @user, html: {class: 'form-signin', role: 'form'} do |f|
-  h2
+  h2 title='默认采用免密码方式登录。登录后，你也可以在后台设置为采用密码验证方式登录。'
     | 用户注册
   = error_msg @user
   = render partial: '/shared/ie_tip', locals: {tip: t('username')}
-  input type='text' name='user[username]' value=@user.username class='form-control' placeholder="#{t'username'}" required='' autofocus=''
-  = render partial: '/shared/ie_tip', locals: {tip: t('nickname')}
-  input type='text' name='user[nickname]' value=@user.nickname class='form-control' placeholder="#{t'nickname'}"
+  input type='text' name='user[username]' value=@user.username class='form-control' placeholder="#{t'username'}" required='' autofocus='' title='默认采用免密码方式登录。登录后，你也可以在后台设置为采用密码验证方式登录。'
   .checkbox
-    span title='即登录时只需填写用户名，不用填写密码。' 本站实施无密码登录。
-  button class='btn btn-lg btn-primary btn-block' type='submit'
+    span style='color: #777' title='默认采用免密码方式登录。登录后，你也可以在后台设置为采用密码验证方式登录。' 登录时只需填用户名
+  button class='btn btn-lg btn-primary btn-block' type='submit' title='默认采用免密码方式登录。登录后，你也可以在后台设置为采用密码验证方式登录。'
     = t(:submit)
-  br
-  = link_to t(:registered_user_login), login_path
 br
 br

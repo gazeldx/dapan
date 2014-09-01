@@ -20,4 +20,10 @@
     p
       - show = vote.index.try(:ad)
       | 当日大盘#{show.nil? ? '涨跌结果尚未分晓' : show}
+      - if vote.content.present?
+        | 。
+        br
+        = time_name(vote.updated_at)
+        | &nbsp;#{vote.content}
+        
     hr

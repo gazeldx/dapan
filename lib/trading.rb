@@ -79,6 +79,28 @@ module Trading
   def trade_time_stop(now)
     Time.new(now.year, now.month, now.day, 15, 0, 0, "+08:00")
   end
+
+  #TODO: Move to Date.rb as Date instance method  
+  def date_name(date)
+    unless date.nil?
+      if date.year == Date.today.year
+        date.strftime(t'date_without_year')
+      else
+        date.strftime(t'date_format')
+      end
+    end
+  end
+  
+  #TODO: Move to Time.rb
+  def time_name(time)
+    unless time.nil?
+      if time.year == Date.today.year
+        time.strftime(t'time_without_year')
+      else
+        time.strftime(t'time_format')
+      end
+    end
+  end
   
   def day_name_in_week(date)
     ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][date.wday]

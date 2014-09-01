@@ -16,5 +16,14 @@ class VotesController < ApplicationController
   def check_time_for_voting
     redirect_to root_path, notice: t('It is trading time. So you cannot vote now.') if trading_time?
   end
+  
+  def update
+    @vote = Vote.find(params[:id])
+    if @vote.update_attribute(:content, params[:content])
+      redirect_to root_path, notice: '理由提交成功！'
+    else
+      redirect_to root_path, notice: '理由提交失败！'
+    end
+  end
     
 end
