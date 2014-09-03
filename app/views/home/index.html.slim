@@ -59,7 +59,7 @@ div class='row marketing'
           - @aces.each_with_index do |user, i|
             tr
               td= i + 1
-              td= link_to user.nick_name, user
+              td= link_to user.nick_name, "#{user.id}"
               td
                 | #{user.all_kill.to_i}连中
               - _class = user.current_vote.try(:upshot).present? ? "text-#{COLOR[user.current_vote.upshot]}" : nil

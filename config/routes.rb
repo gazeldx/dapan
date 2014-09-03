@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   patch 'update_password' => 'users#update_password'
   
   get 'award' => 'users#award'
+  
+  get ':id' => 'users#show', :constraints => { :id => /\d+/ }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
