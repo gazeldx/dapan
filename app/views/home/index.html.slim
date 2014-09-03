@@ -11,7 +11,6 @@
   h3
     - all_count = @advance_count + @decline_count + @flat_count
     | 共#{all_count}人竞猜
-    / #{date_and_week_name(get_target_date_all_ok)}大盘：
   p.lead
     .progress
       - if all_count > 0
@@ -39,28 +38,33 @@
         - flat = (@flat_count_h.to_f/all_count_h*100)
         div class='progress-bar progress-bar-warning' style="width: #{flat}%"
           | 看平#{flat.round}%
-
 div class='row marketing'
-  .col-lg-6
+  .col-lg-12
     h4
-      | 竞猜奖品
-    p 
-	    | 4连中获小米移动电源（手机充电，共20/剩20）
-  	p 
-  	  | 6连中获金士顿32G U盘（值200元，共10/剩10）
-  	p	
-  	  | 8连中获东方财富通level2收费版1年（共5/剩5）
-  	p 
-  	  | 10连中获红米手机一部（共3/剩3）
-  	p
-  	  | 12连中获小米3手机一部（共2/剩2）
-  	p 
-  	  | 说明：活动截止日期为2014年12月31日。
-  .col-lg-6
-    h4
-      | 高手榜
-    - @aces.each do |user|
-      p 
-        = link_to user.nick_name, user
-        - decision = user.current_vote.try(:decision)
-        | &nbsp;&nbsp;#{user.all_kill.to_i}连中，#{date_and_week_name(get_target_date_all_ok)}#{decision.nil? ? '未竞猜' : decision}
+      | 高手榜（
+      = link_to "12连中获小米3", award_path
+      | ）
+    - unless @aces.blank?
+      div class="col-md-12"
+        table class="table table-condensed"
+          thead
+            tr
+              th #
+              th 昵称
+              th 连中数
+              th 今日观点
+              th 理由
+              th 奖励
+          tbody
+          - @aces.each_with_index do |user, i|
+            tr
+              td= i + 1
+              td= link_to user.nick_name, user
+              td
+                | #{user.all_kill.to_i}连中
+              - _class = user.current_vote.try(:upshot).present? ? "text-#{COLOR[user.current_vote.upshot]}" : nil
+              td class=_class
+                = user.current_vote.try(:decision)
+              td
+                = user.current_vote.try(:content)
+              td

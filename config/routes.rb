@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get 'set_p' => 'users#set_password'
   put 'update_password' => 'users#update_password'
   patch 'update_password' => 'users#update_password'
+  
+  get 'award' => 'users#award'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

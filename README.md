@@ -1,6 +1,5 @@
 TODO:
-User:
-  HomePage not show the awords info fully.
+Domain and only id for user homepage.
   
 Asset Pipline not used now.
 

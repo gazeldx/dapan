@@ -26,12 +26,10 @@ module HomeHelper
   
   private
     def vote_button(adf)
-      color = ['success', 'danger', 'warning']
-      link_to(ADF[adf], "/vote_#{adf.to_s}", :class => "btn btn-lg btn-#{color[adf - 1]}", :role => 'button')
+      link_to(ADF[adf], "/vote_#{adf.to_s}", :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button')
     end
     
     def vote_button_for_not_login(adf)
-      color = ['success', 'danger', 'warning']
-      link_to(ADF[adf], new_user_path, :class => "btn btn-lg btn-#{color[adf - 1]}", :role => 'button')  
+      link_to(ADF[adf], new_user_path, :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button')  
     end  
 end

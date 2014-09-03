@@ -1,1 +1,23 @@
 hello baby auto Time is 2014-08-31 15:05:02 +0800 
+hello baby auto Time is 2014-09-01 15:05:03 +0800 
+source is var hq_str_sh000001="上证指数,2220.129,2217.200,2235.511,2236.286,2217.685,0,0,129166583,117215899895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2014-09-01,15:03:05,00";
+all_kill for user_id = 12 is 1 
+all_kill for user_id = 8 is 0 
+all_kill for user_id = 9 is 0 
+all_kill for user_id = 10 is 0 
+all_kill for user_id = 11 is 0 
+hello baby auto Time is 2014-09-02 15:05:04 +0800 
+source is var hq_str_sh000001="上证指数,2239.684,2235.511,2266.046,2267.509,2234.378,0,0,192124869,170931776839,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2014-09-02,15:03:03,00";
+hello baby auto Time is 2014-09-03 15:05:03 +0800 
+source is var hq_str_sh000001="上证指数,2268.395,2266.046,2288.627,2290.547,2268.100,0,0,212478998,187558381475,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2014-09-03,15:03:06,00";
+all_kill for user_id = 8 is 0 
+all_kill for user_id = 7 is 0 
+all_kill for user_id = 12 is 13 
+all_kill for user_id = 12 is 14 
+all_kill for user_id = 12 is 0 
+all_kill for user_id = 12 is 1 
+all_kill for user_id = 8 is 0 
+all_kill for user_id = 9 is 0 
+all_kill for user_id = 10 is 0 
+all_kill for user_id = 11 is 0 
+all_kill for user_id = 12 is 2 

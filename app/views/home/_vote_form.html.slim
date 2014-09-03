@@ -1,8 +1,9 @@
 = form_for @vote, html: { class: 'form-inline', role: 'form' } do |f|
   .form-group
+    = render partial: 'ie_vote_content'
     label class="sr-only" for="content"
-      | content
-    = text_area_tag :content, nil, rows: 2, cols: 90, class:'form-control', placeholder:  "今天你#{@user.current_vote.decision}的理由是", autofocus: ''
+      | 理由：
+    = text_area_tag :content, nil, rows: 2, cols: 90, class:'form-control', placeholder:  "你#{@user.current_vote.decision}的理由是", autofocus: ''
     | &nbsp;&nbsp;
     button type="submit" class="btn btn-lg btn-primary"
       = t'submit'
