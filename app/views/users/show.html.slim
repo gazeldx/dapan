@@ -1,7 +1,9 @@
 .blog-post
   - @votes.each do |vote|
     h2.blog-post-title
-      | #{date_and_week_name(vote.target_date)} #{ADF[vote.upshot]}
+      | #{date_and_week_name(vote.target_date)}
+      span class="text-#{COLOR[vote.upshot]}"
+        | &nbsp;#{ADF[vote.upshot]}
     p.blog-post-meta
       | 竞猜结果：
       - if vote.correct?

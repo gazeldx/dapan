@@ -1,6 +1,6 @@
 TODO:
 Domain and only id for user homepage.
-  
+
 Asset Pipline not used now.
 
 rails generate migration AddVoteCountsToUsers all_kill:integer month_correct:integer
@@ -13,3 +13,14 @@ RAILS_ENV=production rails console
 is Different from 
 rails console -e produciton
 
+
+
+
+
+
+
+
+
+
+
+http://www.jiawei.com/cn/ sina API show a stock preview.

@@ -26,7 +26,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="<%= user_path(@user) %>">个人空间</a>
+          <a class="blog-nav-item active" href="<%= @user.id %>">个人空间</a>
           <a class="blog-nav-item" href="<%= root_path %>"><%= t'site.name'%></a>
           <% if logged?%>
             <li role="presentation" class='pull-right dropdown' style='display: block;'>

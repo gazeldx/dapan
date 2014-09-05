@@ -10,7 +10,8 @@ module HomeHelper
       tip = ''
       if logged?
         if voted?(target_date)
-          trading_day_before_open? ? '欢迎你今天收盘后再来！' : '欢迎下一交易日收盘后再来！'
+          result = "已投<span class='text-#{COLOR[@user.current_vote.upshot]}'>#{@user.current_vote.decision}，</span>"
+          raw trading_day_before_open? ? "#{result}欢迎你今天收盘后再来！" : "#{result}欢迎下一交易日收盘后再来！"
         else
           raw "#{tip}#{content_tag(:p, vote_button(ADVANCE) + ' ' + vote_button(DECLINE) + ' ' + vote_button(FLAT))}"
         end

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   
   has_many :votes
   has_many :blogs
+  has_many :logins
   
   validates_length_of :username, within: 6..22
   validates_uniqueness_of :username

@@ -26,10 +26,10 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right" role="tablist">
-          <li role="presentation" class="<%= controller_path == 'home' ? 'active' : nil %>"><a href="<%= root_path %>">多空网</a></li>
+          <li role="presentation" class="<%= controller_path == 'home' ? 'active' : nil %>"><a href="<%= root_path %>"><%= t'site.name' %></a></li>
 					<% if logged?%>
-            <li role="presentation"><%= link_to '个人空间', user_path(@user) %></li>
-						<li role="presentation" class='dropdown'>
+            <li role="presentation"><%= link_to '个人空间', "#{@user.id}" %></li>
+						<li role="presentation" class="dropdown<%= controller_path == 'users' ? ' active' : nil %>">
               <%= link_to '设置', "#", {class: 'dropdown-toggle', 'data-toggle'.to_sym => "dropdown", 'aria-expanded'.to_sym => "false"} %>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to '个人资料', profile_path %></li>
