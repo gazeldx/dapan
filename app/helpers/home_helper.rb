@@ -10,13 +10,13 @@ module HomeHelper
       tip = ''
       if logged?
         if voted?(target_date)
-          result = "已投<span class='text-#{COLOR[@user.current_vote.upshot]}'>#{@user.current_vote.decision}，</span>"
+          result = "您已投<span class='text-#{COLOR[@user.current_vote.upshot]}'>#{@user.current_vote.decision}，</span>"
           raw trading_day_before_open? ? "#{result}欢迎你今天收盘后再来！" : "#{result}欢迎下一交易日收盘后再来！"
         else
-          raw "#{tip}#{content_tag(:p, vote_button(ADVANCE) + ' ' + vote_button(DECLINE) + ' ' + vote_button(FLAT))}"
+          raw "#{tip}#{content_tag(:p, vote_button(ADVANCE) + ' ' + vote_button(FLAT) + ' ' + vote_button(DECLINE))}"
         end
       else
-        raw "#{tip}#{content_tag(:p, vote_button_for_not_login(ADVANCE) + ' ' + vote_button_for_not_login(DECLINE) + ' ' + vote_button_for_not_login(FLAT))}"
+        raw "#{tip}#{content_tag(:p, vote_button_for_not_login(ADVANCE) + ' ' + vote_button_for_not_login(FLAT) + ' ' + vote_button_for_not_login(DECLINE))}"
       end
     end
   end

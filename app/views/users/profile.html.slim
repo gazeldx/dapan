@@ -14,6 +14,10 @@
     label for='user_memo'
       = t'user.memo'
     = f.text_field :memo, class: 'form-control', placeholder: t('user.memo')
+  .form-group
+    label for='user_mobile'
+      = t'mobile'
+    = f.text_field :mobile, class: 'form-control', placeholder: t(:mobile)
   = f.submit t(:submit), class: 'btn btn-lg btn-primary btn-block'
 br
 br
