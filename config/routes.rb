@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   patch 'update_password' => 'users#update_password'
   
   get 'award' => 'users#award'
+  get 'about' => 'users#about'
   
   get ':id' => 'users#show', :constraints => { :id => /\d+/ }
 

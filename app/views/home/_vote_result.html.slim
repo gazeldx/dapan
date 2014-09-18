@@ -18,18 +18,3 @@
         - decline = (@decline_count.to_f/all_count*100)
         div class='progress-bar progress-bar-success' style="width: #{decline}%"
           | 看空#{decline.round}%
-  h3
-    - all_count_h = @advance_count_h + @decline_count_h + @flat_count_h
-    | 其中高手#{all_count_h}人
-  p.lead
-    .progress
-      - if all_count_h > 0
-        - advance = (@advance_count_h.to_f/all_count_h*100)
-        div class='progress-bar progress-bar-danger' style="width: #{advance}%"
-          | 看涨#{advance.round}%
-        - flat = (@flat_count_h.to_f/all_count_h*100)
-        div class='progress-bar progress-bar-warning' style="width: #{flat}%"
-          | 看平#{flat.round}%
-        - decline = (@decline_count_h.to_f/all_count_h*100)
-        div class='progress-bar progress-bar-success' style="width: #{decline}%"
-          | 看空#{decline.round}%
