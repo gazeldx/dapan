@@ -42,7 +42,7 @@
           	<li role="presentation" class="<%= controller_path == 'users' and controller.action_name == 'new' ? 'active' : nil %>"><%= link_to '注册', register_path %></li>
 					<% end %>
         </ul>
-        <h3 class="text-muted"><a href=<%= award_path %>>猜大盘赢手机</a></h3>
+        <h3 class="text-muted"><a href=<%= award_path %>><%= mobile? ? "奖品" : "猜大盘赢手机"%></a></h3>
       </div>
 			
 			<%= yield %>
