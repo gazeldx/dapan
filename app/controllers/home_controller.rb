@@ -11,6 +11,10 @@ class HomeController < ApplicationController
     @aces = User.where('all_kill > 0').order(all_kill: :desc).limit(10)
 
     @vote = @user.try(:current_vote)
-  end
     
+    if mobile?
+      render 'mobile/home/index', :layout => 'mobile/portal'
+    end
+  end
+
 end
