@@ -1,0 +1,20 @@
+.jumbotron
+  h3
+    | #{date_and_week_name(get_target_date_all_ok)}大盘
+  p.lead
+    = vote_box
+  h3
+    - all_count = @advance_count + @decline_count + @flat_count
+    | 共#{all_count}人竞猜
+  p.lead
+    .progress
+      - if all_count > 0
+        - advance = (@advance_count.to_f/all_count*100)
+        div class='progress-bar progress-bar-danger' style="width: #{advance}%"
+          | 看涨#{advance.round}%
+        - flat = (@flat_count.to_f/all_count*100)
+        div class='progress-bar progress-bar-warning' style="width: #{flat}%"
+          | 看平#{flat.round}%
+        - decline = (@decline_count.to_f/all_count*100)
+        div class='progress-bar progress-bar-success' style="width: #{decline}%"
+          | 看空#{decline.round}%
