@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :current_user, :mobile?
   
-  helper_method :voted?, :logged?
+  helper_method :voted?, :logged?, :mobile?
   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

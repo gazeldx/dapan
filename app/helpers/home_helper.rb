@@ -27,10 +27,21 @@ module HomeHelper
   
   private
     def vote_button(adf)
-      link_to(ADF[adf], "/vote_#{adf.to_s}", :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button', title: '0.35')
+      link_to(ADF[adf], "/vote_#{adf.to_s}", :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button', title: adf_title(adf), style: mobile? ? 'padding: 8px 13px;' : nil)
     end
     
     def vote_button_for_not_login(adf)
-      link_to(ADF[adf], new_user_path, :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button', title: '0.35', style: 'padding: 8px 13px;')  
-    end  
+      link_to(ADF[adf], new_user_path, :class => "btn btn-lg btn-#{COLOR[adf]}", :role => 'button', title: adf_title(adf), style: mobile? ? 'padding: 8px 13px;' : nil)  
+    end
+    
+    def adf_title(adf)
+      case adf 
+      when ADVANCE  
+        "涨幅大于0.35%"  
+      when DECLINE  
+        "跌幅大于0.35%"  
+      when FLAT
+        "涨跌幅度小于0.35%"
+      end
+    end
 end
