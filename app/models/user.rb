@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   def current_vote
     logger.info "query current_vote"
     Vote.find_by_user_id_and_target_date(self.id, get_target_date_all_ok)
-    # self.votes.where(target_date: get_target_date_all_ok).first
   end
     
   def nick_name

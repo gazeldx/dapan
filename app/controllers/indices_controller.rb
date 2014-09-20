@@ -39,8 +39,6 @@ class IndicesController < ApplicationController
     end
   end
 
-  # DELETE /indexs/1
-  # DELETE /indexs/1.json
   def destroy
     @index.destroy
     respond_to do |format|

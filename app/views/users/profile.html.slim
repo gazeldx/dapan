@@ -1,8 +1,8 @@
-= title '个人资料'
+= title t('user.info')
 = notice_info
 = form_for @_user, html: {class: 'form-signin', role: 'form'} do |f|
   h2
-    | 个人资料
+    = t('user.info')
   = error_msg @_user
   .form-group
     label= "#{t'username'}：#{@_user.username}"

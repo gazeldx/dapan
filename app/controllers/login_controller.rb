@@ -21,6 +21,7 @@ class LoginController < ApplicationController
             login_process
           else
             flash[:error] = t'login.password_wrong'
+            flash[:username] = params[:username]
             redirect_to login2_path
           end
         end

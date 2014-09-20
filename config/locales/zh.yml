@@ -14,18 +14,26 @@ zh:
   _advance: '上涨'
   _decline: '下跌'
 
+  settings: '设置'
+  register: '注册'
+  
   site:
     name: '大盘网'
+    scope: '网站愿景'
 
   username: '用户名'
   mobile: '手机号'
   nickname: '昵称'
+  password: '密码'
 
   default_nickname: '股友'
   user:
     memo: '个人空间说明'
     not_exist: '该用户不存在！'
     created_succ: '您已注册成功！'
+    home: '个人空间'
+    info: '个人资料'
+    password: '登录密码'
 
   vote:
     success: '投票成功！'

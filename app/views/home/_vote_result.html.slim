@@ -10,11 +10,11 @@
     .progress
       - if all_count > 0
         - advance = (@advance_count.to_f/all_count*100)
-        div class='progress-bar progress-bar-danger' style="width: #{advance}%"
-          | 看涨#{advance.round}%
+        div class='progress-bar progress-bar-danger' style="width: #{advance}%; font-size: 16px;" title=adf_title(ADVANCE)
+          | #{ADF[ADVANCE]}#{advance.round}%
         - flat = (@flat_count.to_f/all_count*100)
-        div class='progress-bar progress-bar-warning' style="width: #{flat}%"
-          | 看平#{flat.round}%
+        div class='progress-bar progress-bar-warning' style="width: #{flat}%; font-size: 16px;" title=adf_title(FLAT)
+          | #{ADF[FLAT]}#{flat.round}%
         - decline = (@decline_count.to_f/all_count*100)
-        div class='progress-bar progress-bar-success' style="width: #{decline}%"
-          | 看空#{decline.round}%
+        div class='progress-bar progress-bar-success' style="width: #{decline}%; font-size: 16px;" title=adf_title(DECLINE)
+          | #{ADF[DECLINE]}#{decline.round}%

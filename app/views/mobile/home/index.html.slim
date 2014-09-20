@@ -1,4 +1,4 @@
-= title "#{t'site.name'} － 竞猜大盘"
+= title "竞猜大盘"
 = notice_info
 = render 'vote_form' if logged? and voted?(get_target_date_all_ok) and @user.current_vote.content.blank?
 = render 'mobile/home/vote_result'

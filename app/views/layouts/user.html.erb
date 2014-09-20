@@ -26,20 +26,20 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="<%= @user.id %>">个人空间</a>
+          <a class="blog-nav-item active" href="<%= @user.id %>"><%= t'user.home' %></a>
           <a class="blog-nav-item" href="<%= root_path %>"><%= t'site.name'%></a>
           <% if logged?%>
             <li role="presentation" class='pull-right dropdown' style='display: block;'>
-              <%= link_to '设置', "#", {class: 'blog-nav-item pull-right dropdown-toggle', 'data-toggle'.to_sym => "dropdown", 'aria-expanded'.to_sym => "false"} %>
+              <%= link_to t('settings'), "#", {class: 'blog-nav-item pull-right dropdown-toggle', 'data-toggle'.to_sym => "dropdown", 'aria-expanded'.to_sym => "false"} %>
               <ul class="dropdown-menu" role="menu">
-                <li><%= link_to '个人资料', profile_path %></li>
-                <li><%= link_to '登录密码', set_p_path %></li>
+                <li><%= link_to t('user.info'), profile_path %></li>
+                <li><%= link_to t('user.password'), set_p_path %></li>
                 <li><%= link_to t('logout'), logout_path %></li>
               </ul>
             </li>
           <% else %>
-            <a class="blog-nav-item pull-right" href="<%= register_path %>">注册</a>
-            <a class="blog-nav-item pull-right" href="<%= login_path %>"><%= t('_login') %></a>
+            <a class="blog-nav-item pull-right" href="<%= register_path %>"><%= t'register'%></a>
+            <a class="blog-nav-item pull-right" href="<%= login_path %>"><%= t'_login' %></a>
           <% end %>
         </nav>
       </div>
@@ -73,7 +73,7 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p><%= @user.nick_name %> &copy; <%= t'site.name'%> 2014&nbsp;|&nbsp;<%= link_to '网站愿景', about_path %></p>
+      <p><%= @user.nick_name %> &copy; <%= t'site.name'%> 2014 &nbsp;| &nbsp;<%= link_to t('site.scope'), about_path %></p>
       <p>
         <a href="#">回到顶部</a>
       </p>
