@@ -4,7 +4,7 @@
 zh:
   submit: '提交'
   back: '返回'
-  success: "%{w}成功！"
+  success: '%{w}成功！'
   return_home: '返回首页'
 
   decline: '看空'
@@ -48,6 +48,8 @@ zh:
   login:
     password_wrong: "密码错误！"
     user_exist_password_wrong: "用户是存在的，但密码错误！"
+    
+  
 
   time_format: "%Y年%-m月%-d日 %H:%M"
   time_without_year: "%-m月%-d日 %H:%M"

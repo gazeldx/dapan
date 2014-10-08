@@ -1,0 +1,19 @@
+h1 Listing users
+.row
+  .col-md-12
+    table class='table table-bordered'
+      thead
+        tr
+          th id
+          th username
+          th Mobile
+          th Nickname
+          th
+      tbody
+        - @users.each_with_index do |user, i|
+          tr
+            td= i
+            td= user.username[0..3]
+            td= user.mobile
+            td= user.nick_name
+            td= link_to 'Show', user

@@ -35,6 +35,7 @@ module Trading
   end
   
   def trading_day?(date)
+    date = Date.parse(date.to_s) if date.is_a? Time
     !(HOLIDAYS.include?(date.to_s) or (date.sunday? or date.saturday?))
   end
   
