@@ -20,6 +20,7 @@ zh:
   site:
     name: '大盘网'
     scope: '网站愿景'
+    faq: '游戏规则'
 
   username: '用户名'
   mobile: '手机号'
@@ -48,8 +49,20 @@ zh:
   login:
     password_wrong: "密码错误！"
     user_exist_password_wrong: "用户是存在的，但密码错误！"
-    
-  
+
+  l0: '无业人士'
+  l1: '职员'
+  l2: '组长'
+  l3: '部门经理'
+  l4: '小老板'
+  l5: '本街首富'
+  l6: '本镇首富'
+  l7: '本区首富'
+  l8: '本市首富'
+  l9: '本省首富'
+  l10: '中国首富'
+  l11: '亚洲首富'
+  l12: '世界首富'
 
   time_format: "%Y年%-m月%-d日 %H:%M"
   time_without_year: "%-m月%-d日 %H:%M"

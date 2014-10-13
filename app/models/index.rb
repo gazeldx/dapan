@@ -33,13 +33,15 @@ class Index < ActiveRecord::Base
     clear_user_all_kill_not_vote_today(votes)
     
     votes.each do |vote|
-      result = (vote.upshot == index.upshot)
+      correct = (vote.upshot == index.upshot)
       user = vote.user
-      all_kill = (result ? user.all_kill.to_i + 1 : 0)
+      all_kill = (correct ? user.all_kill + 1 : 0)
       puts "all_kill for user_id = #{user.id} is #{all_kill} "
       
-      vote.update_attributes(correct: result, all_kill: all_kill)
-      user.update_attribute(:all_kill, all_kill)
+      # calc_score_change
+      
+      vote.update_attributes(correct: correct, all_kill: all_kill, score: 0)
+      user.update_attributes(all_kill: all_kill, score: 0)
     end if index.upshot.present?
   end
   

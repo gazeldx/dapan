@@ -1,8 +1,6 @@
 .jumbotron
-  h3
-    | #{date_and_week_name(get_target_date_all_ok)}大盘
-  p.lead
-    = vote_box
+  h3 #{date_and_week_name(get_target_date_all_ok)}大盘
+  p.lead = vote_box
   h3
     - all_count = @advance_count + @decline_count + @flat_count
     | 共#{all_count}人竞猜

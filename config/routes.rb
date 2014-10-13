@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   
   get 'award' => 'users#award'
   get 'about' => 'users#about'
+  get 'faq' => 'users#faq'
   
   get ':id' => 'users#show', :constraints => { :id => /\d+/ }
 
