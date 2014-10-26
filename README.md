@@ -1,1 +1,1 @@
-我说生命是苦行，你想到了什么？
+This is the source code for http://dapan.hk/
