@@ -38,6 +38,12 @@ gem 'whenever', :require => false
 
 gem 'execjs'
 gem 'therubyracer'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+gem 'mocha', group: :test
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
