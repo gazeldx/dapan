@@ -31,13 +31,16 @@ gem 'spring',        group: :development
 
 # Use unicorn as the app server
 gem 'unicorn', '~> 4.8.3'
-gem 'pg', '~> 0.17.1'
+gem 'sqlite3' # SQLite
 gem 'haml', '~> 4.0.5'
 gem 'slim', '~> 2.0.3'
 gem 'whenever', :require => false
 
 gem 'execjs'
 gem 'therubyracer'
+
+gem 'grape'
+gem "hashie_rails"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

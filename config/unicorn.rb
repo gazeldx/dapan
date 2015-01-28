@@ -14,7 +14,7 @@ stdout_path "#{Rails.root}/log/unicorn.log"
 
 listen 8080, :tcp_nopush => false
 
-listen "/tmp/unicorn.duokong.sock"
+listen "/tmp/unicorn.dapan.sock"
 worker_processes 3
 timeout 120
 

@@ -13,16 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20141011092357) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "blogs", force: true do |t|
     t.integer "user_id"
     t.string  "content"
     t.date    "target_date"
   end
 
-  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
 
   create_table "indices", force: true do |t|
     t.date     "current_date"
@@ -42,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141011092357) do
     t.datetime "updated_at"
   end
 
-  add_index "logins", ["user_id"], name: "index_logins_on_user_id", using: :btree
+  add_index "logins", ["user_id"], name: "index_logins_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -69,6 +66,6 @@ ActiveRecord::Schema.define(version: 20141011092357) do
     t.float    "score"
   end
 
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

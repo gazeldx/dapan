@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   
   get ':id' => 'users#show', :constraints => { :id => /\d+/ }
 
+  mount Twitter::API => '/'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

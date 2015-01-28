@@ -16,6 +16,8 @@ class HomeController < ApplicationController
       # render 'mobile/home/index', :layout => 'mobile/portal'
       render 'mobile/home/index'
     end
+
+    puts "hhhh0000---------------"
   end
 
 end

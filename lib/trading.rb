@@ -49,18 +49,16 @@ module Trading
   end
   
   def get_target_date
-    today = Date.today
-    if trading_day?(today)
-      now = Time.now
-      if now < trade_time_start(now)
-        today
-      elsif now > trade_time_stop(now)
-        next_trading_day(today)
+    if trading_day?(Date.today)
+      if Time.now < trade_time_start(Time.now)
+        Date.today
+      elsif Time.now > trade_time_stop(Time.now)
+        next_trading_day(Date.today)
       else
         nil
       end
     else
-      next_trading_day(today)
+      next_trading_day(Date.today)
     end
   end
   
